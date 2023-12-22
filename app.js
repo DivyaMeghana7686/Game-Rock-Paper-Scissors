@@ -9,8 +9,9 @@ const compScorePara = document.querySelector("#comp-score");
 
 const genCompChoice=()=>{
     const options=['rock','paper','scissors'];
-    const randomNum=Math.floor(Math.random()*3);
-    const comChoice=options[randomNum];
+    const randomNum=Math.floor(Math.random()*3);//Math.random() returns a random number between 0 and 1 and the floor()
+    //method rounds a number DOWNWARDS to the nearest integer, and returns the result.
+    const comChoice=options[randomNum];//randomNum is the index of the options array
     return comChoice;
 }
 
@@ -58,7 +59,8 @@ const playGame=(userChoice)=>{
 }
 
 choices.forEach((choice)=> {
-    choice.addEventListener("click",()=>{
+    choice.addEventListener("click",()=>{//the most important part of this is the Event Listener, it listens to the
+        //choice of the user that is clicked
         const userChoiceId=choice.getAttribute("id");
         playGame(userChoiceId);
     })
